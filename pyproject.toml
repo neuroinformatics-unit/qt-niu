@@ -1,7 +1,7 @@
 [project]
 name = "qt-niu"
 authors = [{name = "Adam Tyson", email= "code@adamltyson.com"}]
-description = "Reuseable Qt elements"
+description = "Reusable Qt elements"
 readme = "README.md"
 requires-python = ">=3.9.0"
 dynamic = ["version"]
