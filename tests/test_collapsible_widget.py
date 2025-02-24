@@ -8,7 +8,7 @@ from qtpy.QtWidgets import (
     QWidget,
 )
 
-from brainglobe_utils.qtpy.collapsible_widget import (
+from qt_niu.collapsible_widget import (
     CollapsibleWidget,
     CollapsibleWidgetContainer,
 )

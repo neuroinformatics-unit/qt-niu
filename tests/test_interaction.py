@@ -1,7 +1,7 @@
 import pytest
 from qtpy.QtWidgets import QGridLayout, QGroupBox
 
-from brainglobe_utils.qtpy.interaction import (
+from qt_niu.interaction import (
     add_button,
     add_checkbox,
     add_combobox,

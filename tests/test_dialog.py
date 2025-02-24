@@ -1,7 +1,7 @@
 import pytest
 from qtpy.QtWidgets import QGroupBox, QMessageBox
 
-from brainglobe_utils.qtpy.dialog import display_warning
+from qt_niu.dialog import display_warning
 
 
 @pytest.mark.parametrize(

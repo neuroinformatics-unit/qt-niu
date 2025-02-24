@@ -2,7 +2,7 @@ import pandas as pd
 import pytest
 from qtpy.QtCore import Qt
 
-from brainglobe_utils.qtpy.table import DataFrameModel
+from qt_niu.table import DataFrameModel
 
 
 @pytest.fixture

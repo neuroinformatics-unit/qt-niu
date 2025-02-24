@@ -1,4 +1,4 @@
-from brainglobe_utils.qtpy.logo import header_widget
+from qt_niu.logo import header_widget
 
 
 def test_logo(qtbot):
