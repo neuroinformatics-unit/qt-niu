@@ -37,7 +37,8 @@ dev = [
   "mypy",
   "pre-commit",
   "ruff",
-  "setuptools_scm", "pyside2"
+  "setuptools_scm",
+    "pyside6"
 
 ]
 
