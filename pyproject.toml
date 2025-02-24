@@ -32,13 +32,14 @@ classifiers = [
 dev = [
   "pytest",
   "pytest-cov",
+    "pytest-qt",
   "coverage",
   "tox",
   "mypy",
   "pre-commit",
   "ruff",
   "setuptools_scm",
-    "pyside6"
+    "pyqt5"
 
 ]
 
@@ -105,6 +106,12 @@ extras =
     dev
 commands =
     pytest -v --color=yes --cov=qt_niu --cov-report=xml
+passenv =
+    CI
+    GITHUB_ACTIONS
+    DISPLAY
+    XAUTHORITY
+    PYVISTA_OFF_SCREEN
 """
 
 
