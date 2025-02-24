@@ -3,10 +3,10 @@ name = "qt-niu"
 authors = [{name = "Adam Tyson", email= "code@adamltyson.com"}]
 description = "Reusable Qt elements"
 readme = "README.md"
-requires-python = ">=3.9.0"
+requires-python = ">=3.11.0"
 dynamic = ["version"]
 
-dependencies = []
+dependencies = ["qtpy", "superqt", "pandas"]
 
 license = {text = "MIT"}
 
@@ -14,9 +14,9 @@ classifiers = [
     "Development Status :: 2 - Pre-Alpha",
     "Programming Language :: Python",
     "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.9",
-    "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
     "Operating System :: OS Independent",
     "License :: OSI Approved :: MIT License",
 ]
@@ -32,12 +32,15 @@ classifiers = [
 dev = [
   "pytest",
   "pytest-cov",
+    "pytest-qt",
   "coverage",
   "tox",
   "mypy",
   "pre-commit",
   "ruff",
   "setuptools_scm",
+    "pyqt5"
+
 ]
 
 [build-system]
@@ -68,8 +71,6 @@ ignore = [
   ".yaml",
   "tox.ini",
   "tests/",
-  "tests/test_unit/",
-  "tests/test_integration/",
 ]
 
 [tool.ruff]
@@ -79,12 +80,9 @@ lint.select = [
   "E",   # pycodestyle errors
   "F",   # Pyflakes
   "I",   # isort
-  # You can see what all the rules do here: https://docs.astral.sh/ruff/rules/
-  # Some additional ruff rules that might be useful (uncomment to enable)
-  #"UP",  # pyupgrade
-  #"B",   # flake8 bugbear
-  #"SIM", # flake8 simplify
-  #"C90", # McCabe complexity
+  "UP",  # pyupgrade
+  "B",   # flake8 bugbear
+  "C90", # McCabe complexity
 ]
 fix = true
 
@@ -94,20 +92,26 @@ docstring-code-format = true # Also format code in docstrings (e.g. examples)
 [tool.tox]
 legacy_tox_ini = """
 [tox]
-envlist = py{39,310,311}
+envlist = py{311,312,313}
 isolated_build = True
 
 [gh-actions]
 python =
-    3.9: py39
-    3.10: py310
     3.11: py311
+    3.12: py312
+    3.13: py313
 
 [testenv]
 extras =
     dev
 commands =
     pytest -v --color=yes --cov=qt_niu --cov-report=xml
+passenv =
+    CI
+    GITHUB_ACTIONS
+    DISPLAY
+    XAUTHORITY
+    PYVISTA_OFF_SCREEN
 """
 
 

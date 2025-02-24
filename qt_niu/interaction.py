@@ -1,4 +1,4 @@
-from typing import Callable, List, Optional, Tuple
+from collections.abc import Callable
 
 from qtpy.QtWidgets import (
     QCheckBox,
@@ -21,7 +21,7 @@ def add_button(
     visibility: bool = True,
     minimum_width: int = 0,
     alignment: str = "center",
-    tooltip: Optional[str] = None,
+    tooltip: str | None = None,
 ) -> QPushButton:
     """
     Add a button to *layout*.
@@ -51,7 +51,7 @@ def add_checkbox(
     label: str,
     row: int = 0,
     column: int = 0,
-    tooltip: Optional[str] = None,
+    tooltip: str | None = None,
 ) -> QCheckBox:
     """
     Add a checkbox to *layout*.
@@ -74,7 +74,7 @@ def add_float_box(
     step: float,
     row: int = 0,
     column: int = 0,
-    tooltip: Optional[str] = None,
+    tooltip: str | None = None,
 ) -> QDoubleSpinBox:
     """
     Add a spin box for float values to *layout*.
@@ -99,7 +99,7 @@ def add_int_box(
     label: str,
     row: int = 0,
     column: int = 0,
-    tooltip: Optional[str] = None,
+    tooltip: str | None = None,
 ) -> QSpinBox:
     """
     Add a spin box for integer values to *layout*.
@@ -119,13 +119,13 @@ def add_int_box(
 def add_combobox(
     layout: QLayout,
     label: str,
-    items: List[str],
+    items: list[str],
     row: int = 0,
     column: int = 0,
     label_stack: bool = False,
-    callback: Optional[Callable] = None,
+    callback: Callable | None = None,
     width: int = 150,
-) -> Tuple[QComboBox, Optional[QLabel]]:
+) -> tuple[QComboBox, QLabel | None]:
     """
     Add a selection box to *layout*.
     """
