@@ -9,5 +9,5 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 [![project chat](https://img.shields.io/badge/zulip-join_chat-brightgreen.svg)](https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement/topic/Welcome!)
 
-This repo hosts custom Qt elements to support [Neuroinformatics Unit](https://github.com/neuroinformatics-unit) and 
+This repo hosts custom Qt elements to support [Neuroinformatics Unit](https://github.com/neuroinformatics-unit) and
 [BrainGlobe](https://github.com/brainglobe) projects.
