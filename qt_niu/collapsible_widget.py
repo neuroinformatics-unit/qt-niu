@@ -1,5 +1,3 @@
-from typing import List, Optional
-
 from qtpy.QtCore import Qt, Signal
 from qtpy.QtWidgets import QVBoxLayout, QWidget
 from superqt.collapsible import QCollapsible
@@ -28,9 +26,9 @@ class CollapsibleWidget(QCollapsible):
     def __init__(
         self,
         title: str = "",
-        parent: Optional[QWidget] = None,
-        expanded_icon: Optional[str] = "▼",
-        collapsed_icon: Optional[str] = "▶",
+        parent: QWidget | None = None,
+        expanded_icon: str | None = "▼",
+        collapsed_icon: str | None = "▶",
     ):
         """
         Initializes a new CollapsibleWidget instance.
@@ -92,7 +90,7 @@ class CollapsibleWidgetContainer(QWidget):
         self.layout().setAlignment(Qt.AlignTop)
         self.layout().setSpacing(0)
         self.layout().setContentsMargins(0, 0, 0, 0)
-        self.collapsible_widgets: List[CollapsibleWidget] = []
+        self.collapsible_widgets: list[CollapsibleWidget] = []
 
     def add_widget(
         self, widget: QWidget, collapsible: bool = True, widget_title: str = ""

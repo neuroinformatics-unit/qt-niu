@@ -1,4 +1,4 @@
-from typing import Any, Optional
+from typing import Any
 
 import pandas as pd
 from qtpy.QtCore import QAbstractTableModel, QModelIndex, Qt
@@ -28,7 +28,7 @@ class DataFrameModel(QAbstractTableModel):
         super().__init__()
         self._df = df
 
-    def rowCount(self, parent: Optional[QModelIndex] = None) -> int:
+    def rowCount(self, parent: QModelIndex | None = None) -> int:
         """
         Return the number of rows in the model.
 
@@ -44,7 +44,7 @@ class DataFrameModel(QAbstractTableModel):
         """
         return self._df.shape[0]
 
-    def columnCount(self, parent: Optional[QModelIndex] = None) -> int:
+    def columnCount(self, parent: QModelIndex | None = None) -> int:
         """
         Return the number of columns in the model.
 
@@ -62,7 +62,7 @@ class DataFrameModel(QAbstractTableModel):
 
     def data(
         self, index: QModelIndex, role: int = Qt.DisplayRole
-    ) -> Optional[Any]:
+    ) -> Any | None:
         """
         Return the data at the given index for the specified role.
 
@@ -89,7 +89,7 @@ class DataFrameModel(QAbstractTableModel):
         section: int,
         orientation: Qt.Orientation,
         role: int = Qt.DisplayRole,
-    ) -> Optional[Any]:
+    ) -> Any | None:
         """
         Return the header data for the specified section and orientation.
 
